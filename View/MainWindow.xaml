@@ -58,22 +58,21 @@
 
         <Border Grid.Row="2" Style="{StaticResource BorderCage}">
             <Grid>
-                <Image Style="{StaticResource Cage}"/>
+                <Image Source="{StaticResource ZooBackground}" Stretch="Fill"/>
                 <customs:AnimalCage ItemsSource="{Binding Elephants}"/>
             </Grid>
         </Border>
 
         <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource BorderCage}">
             <Grid>
-                <Image Style="{StaticResource Cage}"/>
+                <Image Source="{StaticResource ZooBackground}" Stretch="Fill"/>
                 <customs:AnimalCage ItemsSource="{Binding Giraffes}"/>
             </Grid>
         </Border>
 
-
         <Border Grid.Row="2" Grid.Column="2" Style="{StaticResource BorderCage}">
             <Grid>
-                <Image Style="{StaticResource Cage}"/>
+                <Image Source="{StaticResource ZooBackground}" Stretch="Fill"/>
                 <customs:AnimalCage ItemsSource="{Binding Monkeys}"/>
             </Grid>
         </Border>
