@@ -1,0 +1,79 @@
+﻿<Window x:Class="ZooSimulator.View.GuideWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZooSimulator.View"
+        mc:Ignorable="d"
+        Icon="{StaticResource QuestionMark}"
+        ResizeMode="NoResize"
+        
+        Title="Guide" Height="500" Width="450">
+    <FlowDocumentScrollViewer>
+        <FlowDocument FontFamily="Calibri">
+            <Paragraph FontSize="30" Margin="0">How to Play:</Paragraph>
+            <Paragraph Margin="10">
+                The application shows three cages containing three different types of animal: monkey, giraffe and elephant. 
+                Each cage contains five animals for each group.
+                Every hour each animal loses between 0% and 20% of their current health.
+            </Paragraph>
+
+            <Paragraph  Margin="10">
+                If the User feeds the animals (by pressing the
+                <Bold>Feed</Bold> button), each group of animals will receive a health boost ranging from 10%
+                to 25% of their current health.
+            </Paragraph>
+
+            <Paragraph Margin="10">
+                Keep in mind that:
+            </Paragraph>
+            
+            <List MarkerStyle="Disc">
+                <ListItem Margin="10">
+                    <Paragraph>
+                        To see an animal to walk (or to move around) just click on it.
+                    </Paragraph>
+                </ListItem>
+                <ListItem Margin="10">
+                    <Paragraph>
+                        When an Elephant has a health below 70% it cannot walk.
+                    </Paragraph>
+                </ListItem>
+                <ListItem Margin="10">
+                    <Paragraph>
+                        If an Elephant health does not return above 70% once the subsequent hour has
+                        elapsed, it is pronounced dead. During this interval it will enter the Dying Stage. If the User feeds it in time, the Elephant might survive.
+                    </Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph Margin="10">
+                        When a Monkey has a health below 30%, it is pronounced dead straight away.
+                    </Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph Margin="10">
+                        When a Giraffe has a health below 50%, it is pronounced dead straight away
+                    </Paragraph>
+                </ListItem>
+                <ListItem>
+                    <Paragraph Margin="10">
+                        Dead Animals will be removed from the screen thanks to the Zoo's HealthMonitorService class.
+                    </Paragraph>
+                </ListItem>
+            </List>
+
+            <Paragraph Margin="10">
+                Also, the User can skip the one hour of waiting time by pressing the
+                <Bold>"1 Hour Jump"</Bold> button. This will automatically decrease the Animal's health.
+                After that, the program will resume its execution as normal waiting for the next hourt to pass before decreasing the animal's health.
+            </Paragraph>
+
+            <Paragraph TextAlignment="Center">
+                Have Fun!
+            </Paragraph>
+            <Paragraph TextAlignment="Center">
+                Salvatore Amaddio.
+            </Paragraph>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+</Window>

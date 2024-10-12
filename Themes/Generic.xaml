@@ -1,0 +1,54 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:ZooSimulator.Converters"
+    xmlns:local="clr-namespace:ZooSimulator.View.Customs">
+
+    <converters:FloatToDoubleConverter x:Key="floatToDoubleConverter"/>
+    <converters:LifeStateToStringConverter x:Key="lifeStateStrConverter"/>
+    <converters:LifeStateColorConverter x:Key="lifeStateColorConverter"/>
+    <converters:FloatToPercentageStringConverter x:Key="floatToPercentageStringConverter"/>
+
+    <Style TargetType="{x:Type local:AnimalControl}">
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:AnimalControl}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="28"/>
+                            </Grid.RowDefinitions>
+                            <ProgressBar x:Name="healthIndicator"
+                                Value="{TemplateBinding Health, Converter={StaticResource floatToDoubleConverter}}"
+                                ToolTip="{TemplateBinding Health, Converter={StaticResource floatToPercentageStringConverter}}" 
+                                Foreground="{Binding LifeState, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource lifeStateColorConverter}}" 
+                                Background="Black"/>
+                            <TextBlock Text="{Binding ElementName=healthIndicator, Path=Value, StringFormat='{}{0:N2}%'}"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" 
+                               Foreground="White" FontWeight="Bold"/>
+
+                            <Border Grid.Row="1" BorderBrush="Black" BorderThickness="0,0,0,1">
+                                <Image Source="{Binding AnimalImage, RelativeSource={RelativeSource TemplatedParent}}" Width="80" Height="80"/>
+                            </Border>
+                            <Label Grid.Row="2" 
+                                   Content="{Binding LifeState, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource lifeStateStrConverter}}" 
+                                   Foreground="{Binding LifeState, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource lifeStateColorConverter}}" 
+                                   FontWeight="Bold"
+                                   VerticalContentAlignment="Center" 
+                                   HorizontalContentAlignment="Center" 
+                                   Background="White"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

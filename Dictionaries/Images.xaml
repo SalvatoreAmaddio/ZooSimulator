@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    >
+
+    <BitmapImage x:Key="WelcomeImage" UriSource="pack://application:,,,/ZooSimulator;component/Images/Others/welcomeImage.jpg" />
+    <BitmapImage x:Key="CageImage" UriSource="pack://application:,,,/ZooSimulator;component/Images/Others/cage.jpg" />
+    <BitmapImage x:Key="QuestionMark" UriSource="pack://application:,,,/ZooSimulator;component/Images/Others/questionMark.png" />
+
+</ResourceDictionary>
