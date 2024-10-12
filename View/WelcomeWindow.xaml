@@ -9,12 +9,22 @@
         ResizeMode="NoResize"
         Title="Welcome!" Height="450" Width="450">
 
+    <Window.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="AliceBlue"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Image Source="{StaticResource WelcomeImage}" Stretch="UniformToFill"/>
-        <Label Content="Welcome to the Zoo Simulator!" HorizontalAlignment="Center" FontSize="25" FontWeight="DemiBold"/>
+        <StackPanel>
+            <Label Content="Zoo" HorizontalAlignment="Center" FontSize="25"/>
+            <Label Content="Simulator" HorizontalAlignment="Center" FontSize="25"/>
+        </StackPanel>
+        
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Label Content="Developed by" FontWeight="Bold" Padding="0"  Foreground="White" HorizontalContentAlignment="Center" VerticalAlignment="Bottom"/>
-            <Label Content="Salvatore Amaddio" FontWeight="Bold" Padding="0,0,0,10" HorizontalContentAlignment="Center" VerticalAlignment="Top" Foreground="White"/>
+            <Label Content="Developed by" Foreground="Black" Padding="0" HorizontalContentAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Content="Salvatore Amaddio" Padding="0,0,0,10" HorizontalContentAlignment="Center" VerticalAlignment="Top"/>
         </StackPanel>
     </Grid>
 </Window>

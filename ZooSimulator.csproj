@@ -22,6 +22,7 @@
     <None Remove="Images\monkey.png" />
     <None Remove="Images\Others\background.jpeg" />
     <None Remove="Images\Others\background.jpg" />
+    <None Remove="Images\Others\zoo.jpg" />
     <None Remove="Images\questionMark.png" />
     <None Remove="Images\welcomeImage.jpg" />
   </ItemGroup>
@@ -37,7 +38,6 @@
   <ItemGroup>
     <Resource Include="Images\Others\background.jpg" />
     <Resource Include="Images\Others\questionMark.png" />
-    <Resource Include="Images\Others\welcomeImage.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +47,7 @@
     <Resource Include="Images\Animals\elephant.png" />
     <Resource Include="Images\Animals\giraffe.png" />
     <Resource Include="Images\Animals\monkey.png" />
+    <Resource Include="Images\Others\zoo.jpg" />
   </ItemGroup>
 
 </Project>
