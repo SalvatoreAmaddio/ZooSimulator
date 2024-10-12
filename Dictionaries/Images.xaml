@@ -3,7 +3,6 @@
                     >
 
     <BitmapImage x:Key="WelcomeImage" UriSource="pack://application:,,,/ZooSimulator;component/Images/Others/welcomeImage.jpg" />
-    <BitmapImage x:Key="CageImage" UriSource="pack://application:,,,/ZooSimulator;component/Images/Others/cage.jpg" />
     <BitmapImage x:Key="ZooBackground" UriSource="pack://application:,,,/ZooSimulator;component/Images/Others/background.jpg" />
     <BitmapImage x:Key="QuestionMark" UriSource="pack://application:,,,/ZooSimulator;component/Images/Others/questionMark.png" />
 

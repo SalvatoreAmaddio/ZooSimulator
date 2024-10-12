@@ -41,7 +41,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\Others\cage.jpg" />
     <Resource Include="Images\Animals\deadElephant.png" />
     <Resource Include="Images\Animals\deadGiraffe.png" />
     <Resource Include="Images\Animals\deadMonkey.png" />
