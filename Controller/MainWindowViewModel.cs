@@ -17,7 +17,7 @@ namespace ZooSimulator.Controller
     /// Acts as the ViewModel for the MainWindow in the WPF application.
     /// Manages commands, data binding, and interactions between the UI and the zoo simulation logic.
     /// </summary>
-    public class MainWindowController : AbstractNotifier
+    public class MainWindowViewModel : AbstractNotifier
     {
         private Window _window;
         private DateTime _currentTime;
@@ -69,7 +69,7 @@ namespace ZooSimulator.Controller
         /// </summary>
         public DeathManager Manager { get; set; }
 
-        internal MainWindowController() 
+        internal MainWindowViewModel() 
         {
             FeedCMD = new Command(Feed);
             JumpCMD = new Command(Jump);
@@ -77,20 +77,20 @@ namespace ZooSimulator.Controller
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindowController"/> class.
+        /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// Sets up commands and event handlers for the main window.
         /// </summary>
-        internal MainWindowController(DeathManager? deathManager = null) : this()
+        internal MainWindowViewModel(DeathManager? deathManager = null) : this()
         {
             Manager = deathManager ?? new(App.Zoo);
             Manager.GameEnded += OnGameEnded;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindowController"/> class with the specified window.
+        /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class with the specified window.
         /// </summary>
         /// <param name="window">The main window associated with this controller.</param>
-        public MainWindowController(Window window, DeathManager? deathManager = null) : this(deathManager)
+        public MainWindowViewModel(Window window, DeathManager? deathManager = null) : this(deathManager)
         {
             _window = window;
             _window.Loaded += OnLoaded;
