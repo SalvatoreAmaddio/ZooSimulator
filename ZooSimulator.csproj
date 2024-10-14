@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ZooSimulatorLibrary\ZooSimulatorLibrary.csproj" />
+    <PackageReference Include="ZooSimulatorLibrary" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
