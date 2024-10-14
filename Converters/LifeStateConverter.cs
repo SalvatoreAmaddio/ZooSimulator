@@ -5,6 +5,9 @@ using ZooSimulatorLibrary.Animals.States;
 
 namespace ZooSimulator.Converters
 {
+    /// <summary>
+    /// Converts an <see cref="IAnimalLifeState"/> instance to a corresponding <see cref="Brush"/> color.
+    /// </summary>
     public class LifeStateColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -34,6 +37,9 @@ namespace ZooSimulator.Converters
         }
     }
 
+    /// <summary>
+    /// Converts an <see cref="IAnimalLifeState"/> instance to its string representation.
+    /// </summary>
     public class LifeStateToStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

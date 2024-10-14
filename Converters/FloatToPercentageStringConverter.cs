@@ -3,6 +3,9 @@ using System.Windows.Data;
 
 namespace ZooSimulator.Converters
 {
+    /// <summary>
+    /// Converts a <see cref="float"/> value to its percentage string representation.
+    /// </summary>
     public class FloatToPercentageStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
