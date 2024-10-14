@@ -1,6 +1,6 @@
 # Zoo Simulator
 
-![Zoo Simulator Logo](Images/zoo_simulator_logo.png)
+![Zoo Simulator Logo](https://raw.githubusercontent.com/SalvatoreAmaddio/ZooSimulator/refs/heads/master/zoo.ico)
 
 ## Table of Contents
 
