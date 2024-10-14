@@ -6,7 +6,6 @@ using ZooSimulator.View;
 using ZooSimulatorLibrary.Animals;
 using ZooSimulatorLibrary.Death;
 using ZooSimulatorLibrary.Notifiers;
-using ZooSimulatorLibrary.Zoo;
 
 namespace ZooSimulator.Controller
 {
@@ -101,7 +100,9 @@ namespace ZooSimulator.Controller
 
         private void Feed()
         {
+            Manager.Stop();
             App.Zoo.FeedingService.Feed();
+            Manager.Run();
         }
     }
 }
