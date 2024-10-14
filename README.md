@@ -68,55 +68,13 @@ The **Zoo Simulator** application is built following the **Model-View-ViewModel 
 The application leverages several design patterns to promote a robust, maintainable, and scalable codebase:
 
 ### 1. Model-View-ViewModel (MVVM)
-
-- **Purpose**: Separates the UI (View) from the business logic and data (Model) using a mediator (ViewModel).
-- **Implementation**:
-  - **View**: `AnimalControl`, `AnimalCage`
-  - **ViewModel**: `MainWindowController`
-  - **Model**: `IAnimal`, `DeathManager`
-
 ### 2. Command Pattern
-
-- **Purpose**: Encapsulates user actions as objects, allowing for parameterization and queuing of requests.
-- **Implementation**:
-  - Commands like `FeedCMD`, `JumpCMD`, and `OpenGuideCMD` in `MainWindowController` implement `ICommand` to handle user interactions.
-
 ### 3. Observer Pattern
-
-- **Purpose**: Establishes a one-to-many dependency between objects, ensuring that changes in one object notify all dependents.
-- **Implementation**:
-  - Events such as `DeathManager.GameEnded` and property change notifications in `AnimalControl` implement the Observer pattern.
-
 ### 4. Strategy Pattern
-
-- **Purpose**: Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
-- **Implementation**:
-  - `IMovingService` interface and its implementation `MovingService` allow for different movement behaviors of animals.
-
 ### 5. Factory Pattern
-
-- **Purpose**: Provides an interface for creating objects without specifying the exact class of the object to be created.
-- **Implementation**:
-  - `AnimalCage` uses a factory to create instances of `AnimalControl`.
-
-### 6. Dependency Injection (DI)
-
-- **Purpose**: Allows for the decoupling of object creation from object usage, enhancing flexibility and testability.
-- **Implementation**:
-  - Currently, dependencies like `DeathManager` and `MovingService` are directly instantiated. Future enhancements recommend integrating a DI container for better management.
-
-### 7. Singleton Pattern
-
-- **Purpose**: Ensures a class has only one instance and provides a global point of access to it.
-- **Implementation**:
-  - Utilization of a shared `Random` instance via a static class to prevent seed duplication issues in random number generation.
-
-### 8. IDisposable Pattern
-
-- **Purpose**: Provides a standardized way to release unmanaged resources and perform cleanup operations.
-- **Implementation**:
-  - Classes like `AnimalControl`, `AnimalCage`, and `AbstractNotifier` implement `IDisposable` to manage resource cleanup.
-
+### 6. Singleton Pattern
+### 7. IDisposable Pattern
+### 8. State Pattern
 ## Getting Started
 
 ### Prerequisites
