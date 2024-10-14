@@ -75,6 +75,7 @@ The application leverages several design patterns to promote a robust, maintaina
 ### 6. Singleton Pattern
 ### 7. IDisposable Pattern
 ### 8. State Pattern
+
 ## Getting Started
 
 ### Prerequisites
