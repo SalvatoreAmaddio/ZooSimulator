@@ -43,15 +43,15 @@ namespace ZooSimulator.Controller
             _window.Loaded += OnLoaded;
         }
 
-        private void OnLoaded(object sender, RoutedEventArgs e)
+        private async void OnLoaded(object sender, RoutedEventArgs e)
         {
             Manager.Run();
 
-            Task.Run(() =>
+            await Task.Run(async () =>
             {
                 while (true)
                 {
-                    Task.Delay(1000);
+                    await Task.Delay(1000);
                     RaisePropertyChanged(nameof(CurrentTime));
                 }
             });
