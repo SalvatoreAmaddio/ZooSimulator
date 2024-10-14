@@ -67,25 +67,30 @@ namespace ZooSimulator.Controller
         /// <summary>
         /// Gets or sets the death manager that controls animals' health over time.
         /// </summary>
-        public DeathManager Manager { get; set; } = new(App.Zoo);
+        public DeathManager Manager { get; set; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindowController"/> class.
-        /// Sets up commands and event handlers for the main window.
-        /// </summary>
-        internal MainWindowController()
+        internal MainWindowController() 
         {
-            Manager.GameEnded += OnGameEnded;
             FeedCMD = new Command(Feed);
             JumpCMD = new Command(Jump);
             OpenGuideCMD = new Command(OpenGuide);
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindowController"/> class.
+        /// Sets up commands and event handlers for the main window.
+        /// </summary>
+        internal MainWindowController(DeathManager? deathManager = null) : this()
+        {
+            Manager = deathManager ?? new(App.Zoo);
+            Manager.GameEnded += OnGameEnded;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowController"/> class with the specified window.
         /// </summary>
         /// <param name="window">The main window associated with this controller.</param>
-        public MainWindowController(Window window) : this()
+        public MainWindowController(Window window, DeathManager? deathManager = null) : this(deathManager)
         {
             _window = window;
             _window.Loaded += OnLoaded;
@@ -115,28 +120,35 @@ namespace ZooSimulator.Controller
         /// </summary>
         private async void OnGameEnded(object sender, EventArgs e)
         {
-            App.Current.Dispatcher.Invoke(() =>
+            try
             {
-                MessageBoxResult result = MessageBox.Show(
-                    _window,
-                    "The Game Has Ended!\nWould you like to play again?",
-                    "Choose an option",
-                    MessageBoxButton.YesNo,
-                    MessageBoxImage.Question);
-
-                if (result == MessageBoxResult.No)
+                App.Current.Dispatcher.Invoke(() =>
                 {
-                    MessageBox.Show("Have a great day!", "Thanks for playing!");
-                    _window.Close();
-                }
-            });
+                    MessageBoxResult result = MessageBox.Show(
+                        _window,
+                        "The Game Has Ended!\nWould you like to play again?",
+                        "Choose an option",
+                        MessageBoxButton.YesNo,
+                        MessageBoxImage.Question);
 
-            App.Zoo.Animals = await Task.Run(() => AnimalGenerator.GenerateZooAsync(App.NumOfAnimals));
+                    if (result == MessageBoxResult.No)
+                    {
+                        MessageBox.Show("Have a great day!", "Thanks for playing!");
+                        _window.Close();
+                    }
+                });
 
-            RaisePropertyChanged(nameof(Elephants));
-            RaisePropertyChanged(nameof(Monkeys));
-            RaisePropertyChanged(nameof(Giraffes));
-            Manager.Run();
+                App.Zoo.Animals = await Task.Run(() => AnimalGenerator.GenerateZooAsync(App.NumOfAnimals));
+
+                RaisePropertyChanged(nameof(Elephants));
+                RaisePropertyChanged(nameof(Monkeys));
+                RaisePropertyChanged(nameof(Giraffes));
+                Manager.Run();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         /// <summary>

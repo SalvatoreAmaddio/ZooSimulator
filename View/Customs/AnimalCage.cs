@@ -54,6 +54,8 @@ namespace ZooSimulator.View.Customs
 
         #endregion
 
+        private static readonly Random _random = new();
+
         #region Constructors
 
         /// <summary>
@@ -134,8 +136,7 @@ namespace ZooSimulator.View.Customs
         /// <returns>A random double value between <paramref name="min"/> and <paramref name="max"/>.</returns>
         private static double GetRandomPosition(double min, double max)
         {
-            // Note: Using a static Random instance or ThreadLocal<Random> is recommended to avoid seed duplication issues.
-            return new Random().NextDouble() * (max - min) + min;
+            return _random.NextDouble() * (max - min) + min;
         }
 
         #endregion

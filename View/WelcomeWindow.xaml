@@ -23,7 +23,7 @@
         </StackPanel>
         
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Label Content="Developed by" Foreground="Black" Padding="0" HorizontalContentAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Content="Developed by" Padding="0" HorizontalContentAlignment="Center" VerticalAlignment="Bottom"/>
             <Label Content="Salvatore Amaddio" Padding="0,0,0,10" HorizontalContentAlignment="Center" VerticalAlignment="Top"/>
         </StackPanel>
     </Grid>
