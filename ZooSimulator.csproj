@@ -32,9 +32,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ZooSimulatorLibrary" Version="1.0.3" />
+  </ItemGroup>
+<!--
+  <ItemGroup>
     <ProjectReference Include="..\ZooSimulatorLibrary\ZooSimulatorLibrary.csproj" />
   </ItemGroup>
-
+-->
   <ItemGroup>
     <Resource Include="Images\Others\background.jpg" />
     <Resource Include="Images\Others\questionMark.png" />
