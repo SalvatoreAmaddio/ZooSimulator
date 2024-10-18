@@ -76,7 +76,7 @@
                 <customs:AnimalCage ItemsSource="{Binding Monkeys}"/>
             </Grid>
         </Border>
-
+        
         <Grid Grid.Row="3" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
